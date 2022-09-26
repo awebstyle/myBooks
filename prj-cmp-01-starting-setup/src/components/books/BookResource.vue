@@ -1,20 +1,24 @@
 <template>
-    <li>
-        <div>
-            <header>
-                <h3>{{ title }} - {{ author }} - {{ edition }}</h3>
-                <button>Supprimer</button>
-            </header>
-        </div>
-        <p>{{ summary }}</p>
-        <p>{{ opinion }}</p>
-        <a :href="link" target="blank">Voir le résumé en images</a>
-    </li>
+    <base-card>
+        <li>
+            <div>
+                <header>
+                    <h3>{{ title }} - {{ author }} - {{ edition }}</h3>
+                    <button>Supprimer</button>
+                </header>
+            </div>
+            <p><span>Résumé</span> - {{ summary }}</p>
+            <p><span>Avis</span> - {{ opinion }}</p>
+            <a :href="link" target="blank">Voir le résumé en images</a>
+        </li>    
+    </base-card>
+    
 </template>
 
 <script>
+    
     export default {
-        props: ['title', 'auhtor', 'edition', 'summary', 'opinion', 'link']
+        props: ['title', 'author', 'edition', 'summary', 'opinion', 'link']
     }
 </script>
 
@@ -38,6 +42,11 @@
 
     p {
     margin: 0.5rem 0;
+    }
+
+    p span{
+        color: #c89300;
+        font-size: 1.2rem;
     }
 
     a {
