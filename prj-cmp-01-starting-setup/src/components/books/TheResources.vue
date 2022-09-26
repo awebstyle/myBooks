@@ -1,8 +1,8 @@
 <template>
     <base-card>
         <!-- le @click est automatiquement appliqué au <button> du BaseButton car c'est l'élément html 'root' -->
-        <base-button @click="setSelectedBtn('stored-resources')">Livres lus</base-button>
-        <base-button @click="setSelectedBtn('add-book')">Ajouter un livre</base-button>
+        <base-button @click="setSelectedBtn('stored-resources')" :mode="storedResMode">Livres lus</base-button>
+        <base-button @click="setSelectedBtn('add-book')" :mode="addResMode">Ajouter un livre</base-button>
     </base-card>
     <component :is="selectedBtn"></component>
 </template>
@@ -11,10 +11,21 @@
     import StoredResources from './StoredResources.vue';
     import AddBook from './AddBook.vue';
 
+
     export default {
         components: {
             StoredResources,
             AddBook
+        },
+
+        computed: {
+            // determines the design of the buttons 
+            storedResMode(){
+                return this.selectedBtn === 'stored-resources' ? null : 'flat';
+            },
+            addResMode(){
+                return this.selectedBtn === 'add-book' ? null : 'flat';
+            }
         },
 
         data(){
