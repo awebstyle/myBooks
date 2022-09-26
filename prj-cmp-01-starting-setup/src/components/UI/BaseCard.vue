@@ -7,7 +7,7 @@
 
 <style scoped>
 div {
-  background: white;
+  background: rgba(255,255,255, .9);
   margin: 2rem auto;
   max-width: 40rem;
   border-radius: 12px;

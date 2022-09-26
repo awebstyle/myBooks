@@ -4,7 +4,7 @@
             <div>
                 <header>
                     <h3>{{ title }} - {{ author }} - {{ edition }}</h3>
-                    <button>Supprimer</button>
+                    <base-button mode="flat">Supprimer</base-button>
                 </header>
             </div>
             <p><span>Résumé</span> - {{ summary }}</p>
