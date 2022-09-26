@@ -4,7 +4,10 @@
         <base-button @click="setSelectedBtn('stored-resources')" :mode="storedResMode">Livres lus</base-button>
         <base-button @click="setSelectedBtn('add-book')" :mode="addResMode">Ajouter un livre</base-button>
     </base-card>
-    <component :is="selectedBtn"></component>
+    <keep-alive>
+        <component :is="selectedBtn"></component>
+    </keep-alive>
+    
 </template>
 
 <script>
