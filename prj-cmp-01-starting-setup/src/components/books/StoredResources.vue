@@ -13,12 +13,12 @@
 </template>
 
 <script>
-    import BookResource from './books/BookResource.vue'
+    import BookResource from './BookResource.vue'
     export default{
         components: {
             BookResource
         },
-        props: ['resources']
+        inject: ['resources']
     }
 </script>
 

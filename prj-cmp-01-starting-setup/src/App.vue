@@ -1,42 +1,21 @@
 <template>
     <TheHeader title="Mes dernières lectures"/>
-    <stored-resources
-        :resources="storedBooks"
-    >
-    </stored-resources>
+    <the-resources></the-resources>
 </template>
 
 <script>
-    import StoredResources from './components/StoredResources.vue';
+    
     import TheHeader from './components/layout/TheHeader.vue';
+    import TheResources from './components/books/TheResources.vue';
 
     export default {
         components: {
-            StoredResources,
-            TheHeader
+            TheHeader,
+            TheResources
         },
         data(){
             return {
-                storedBooks: [
-                {
-                    id: 'clStendhalRN',
-                    title: 'Le rouge et le noir',
-                    author: 'Stendhal',
-                    edition: 'Les Cent Chefs-d\'oeuvre',
-                    summary: 'Julien Sorel, fils de charpentier, doté de capacités intellectuelles supérieures, tente de s\'élever dans la société. Passionné par Napoléon, il rêve d\'une grande destinée en revêtant l\'habit de soldat (rouge) mais c\'est celui du clergé (noir) qui lui sera réservé.',
-                    opinion: 'Très beaux textes.  Début très prenant mais l\'histoire devient moins captivante au fil de la lecture.  Ce roman reste toutefois un grand classique très intéressant et, sans conteste, à lire.',
-                    link: 'https://awebstyle.be'
-                },
-                {
-                    id: 'clMalrauxCH',
-                    title: 'La condition humaine',
-                    author: 'Malraux',
-                    edition: 'folio',
-                    summary: 'Pas encore de résumé ...',
-                    opinion: 'Pas encore d\'opinion.',
-                    link: 'https://awebstyle.be' 
-                }
-                ]
+                
             }
         },
     }
