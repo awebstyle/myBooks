@@ -1,23 +1,16 @@
 <template>
     <h1>Dernières lectures</h1>
-    <ul>
-      <book-resource v-for="book in storedBooks" :key="book.id"
-        :title="book.title"
-        :author="book.author"
-        :edition="book.edition"
-        :summary="book.summary"
-        :opinion="book.opinion"
-        :link="book.link"
-      >
-      </book-resource>  
-    </ul>
+    <stored-resources
+        :resources="storedBooks"
+    >
+    </stored-resources>
 </template>
 
 <script>
-    import BookResource from './components/books/BookResource.vue';
+    import StoredResources from './components/StoredResources.vue';
     export default {
         components: {
-            BookResource
+            StoredResources
         },
         data(){
             return {
@@ -45,3 +38,23 @@
         },
     }
 </script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;300&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'League Spartan', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  text-align: center ;
+}
+</style>
