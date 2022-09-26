@@ -1,4 +1,13 @@
 <template>
+    <base-dialog v-if="inputIsInvalid" title="Erreur(s) dans les données" @close="close">
+        <template #default>
+            <p>Oups ! Il y a au moins une donnée qui n'a pas été encodée correctement</p>
+            <p>Veuillez revérifier l'ensemble du formulaire et remplir chaque champ.</p>
+        </template>
+        <template #actions>
+            <base-button @click="close">Ok</base-button>
+        </template>
+    </base-dialog>
     <base-card id="bookAdd">
         <form @submit.prevent="submitData">
             <div class="form-control">
@@ -41,13 +50,25 @@
                 enteredEdition: '',
                 enteredSummary: '',
                 enteredOpinion: '',
-                enteredLink: ''
+                enteredLink: '',
+
+                inputIsInvalid: false
             }
         },
         inject: ['addBook'],
         methods: {
            submitData(){
+            if (this.enteredTitle.trim() === '' || this.enteredAuthor.trim() === ''
+            || this.enteredEdition.trim() === '' || this.enteredSummary.trim() === ''
+            || this.enteredOpinion.trim() === '' || this.enteredLink.trim() === ''){
+                this.inputIsInvalid = true;
+                return;
+            }
             this.addBook(this.enteredTitle, this.enteredAuthor, this.enteredEdition, this.enteredSummary, this.enteredOpinion, this.enteredLink);
+           },
+           
+           close(){
+            this.inputIsInvalid = false;
            }
         }
     }
