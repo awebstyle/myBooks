@@ -1,29 +1,29 @@
 <template>
     <base-card id="bookAdd">
-        <form>
+        <form @submit.prevent="submitData">
             <div class="form-control">
                 <label for="title">Titre</label>
-                <input type="text" id="title" name="title">
+                <input type="text" id="title" name="title" v-model="enteredTitle">
             </div>
             <div class="form-control">
                 <label for="author">Auteur</label>
-                <input type="text" id="author" name="author">
+                <input type="text" id="author" name="author" v-model="enteredAuthor">
             </div>
             <div class="form-control">
                 <label for="edition">Édition</label>
-                <input type="text" id="edition" name="edition">
+                <input type="text" id="edition" name="edition" v-model="enteredEdition">
             </div>
             <div class="form-control">
                 <label for="summary">Résumé</label>
-                <textarea id="summary" name="summary" rows="3"></textarea>
+                <textarea id="summary" name="summary" rows="3" v-model="enteredSummary"></textarea>
             </div>
             <div class="form-control">
                 <label for="opinion">Avis</label>
-                <textarea id="opinion" name="opinion" rows="3"></textarea>
+                <textarea id="opinion" name="opinion" rows="3" v-model="enteredOpinion"></textarea>
             </div>
             <div class="form-control">
                 <label for="link">Lien vers le résumé en images</label>
-                <input type="url" id="link" name="link">
+                <input type="url" id="link" name="link" v-model="enteredLink">
             </div>
             <div>
                 <base-button type="submit">Ajouter le livre</base-button>
@@ -31,6 +31,27 @@
         </form>
     </base-card>
 </template>
+
+<script>
+    export default{
+        data(){
+            return {
+                enteredTitle: '',
+                enteredAuthor: '',
+                enteredEdition: '',
+                enteredSummary: '',
+                enteredOpinion: '',
+                enteredLink: ''
+            }
+        },
+        inject: ['addBook'],
+        methods: {
+           submitData(){
+            this.addBook(this.enteredTitle, this.enteredAuthor, this.enteredEdition, this.enteredSummary, this.enteredOpinion, this.enteredLink);
+           }
+        }
+    }
+</script>
 
 <style scoped>
     label {

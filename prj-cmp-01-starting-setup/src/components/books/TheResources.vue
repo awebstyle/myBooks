@@ -12,6 +12,7 @@
     import AddBook from './AddBook.vue';
 
 
+
     export default {
         components: {
             StoredResources,
@@ -58,13 +59,27 @@
 
         provide(){
             return {
-                resources: this.storedBooks
+                resources: this.storedBooks,
+                addBook: this.addBook,
             };
         },
 
         methods: {
             setSelectedBtn(btn){
                 this.selectedBtn = btn;
+            },
+            addBook(title, author, edition, summary, opinion, link){
+                const book = {
+                    id : new Date().toISOString(),
+                    title: title,
+                    author: author,
+                    edition: edition,
+                    summary: summary,
+                    opinion: opinion,
+                    link: link
+                }
+                this.storedBooks.unshift(book);
+                this.selectedBtn = 'stored-resources';
             }
         }
     }
