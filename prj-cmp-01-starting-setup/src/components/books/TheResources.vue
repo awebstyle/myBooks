@@ -42,7 +42,7 @@
                     title: 'Le rouge et le noir',
                     author: 'Stendhal',
                     edition: 'Les Cent Chefs-d\'oeuvre',
-                    summary: 'Julien Sorel, fils de charpentier, doté de capacités intellectuelles supérieures, tente de s\'élever dans la société. Passionné par Napoléon, il rêve d\'une grande destinée en revêtant l\'habit de soldat (rouge) mais c\'est celui du clergé (noir) qui lui sera réservé.',
+                    summary: 'Le roman décrit le parcours de Julien Sorel, dans une petite ville nommée Verrières, en Franche-Comté puis à Besançon, et plus précisément son entrée chez les de Rênal, et sa passion pour Mme de Rênal, de même que son séjour dans un séminaire ; la seconde partie porte sur la vie du héros à Paris comme secrétaire du marquis de La Mole, et ses aventures avec sa fille, Mathilde. Passionné par Napoléon, il rêve d\'une grande destinée en revêtant l\'habit de soldat (rouge) mais c\'est celui du clergé (noir) qui lui sera réservé.',
                     opinion: 'Très beaux textes.  Début très prenant mais l\'histoire devient moins captivante au fil de la lecture.  Ce roman reste toutefois un grand classique très intéressant et, sans conteste, à lire.',
                     link: 'https://awebstyle.be'
                 },

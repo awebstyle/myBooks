@@ -36,6 +36,7 @@ body {
   margin: 0;
   background-image: url('./img/book.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h1 {
