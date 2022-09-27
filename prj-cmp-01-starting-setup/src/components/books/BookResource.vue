@@ -4,7 +4,7 @@
             <div>
                 <header>
                     <h3>{{ title }} - {{ author }} - {{ edition }}</h3>
-                    <base-button mode="flat">Supprimer</base-button>
+                    <base-button mode="flat" @click="removeBook(id)">Supprimer</base-button>
                 </header>
             </div>
             <p><span>Résumé</span> - {{ summary }}</p>
@@ -18,7 +18,8 @@
 <script>
     
     export default {
-        props: ['title', 'author', 'edition', 'summary', 'opinion', 'link']
+        props: ['id','title', 'author', 'edition', 'summary', 'opinion', 'link'],
+        inject: ['removeBook']
     }
 </script>
 

@@ -64,6 +64,7 @@
             return {
                 resources: this.storedBooks,
                 addBook: this.addBook,
+                removeBook : this.removeBook,
             };
         },
 
@@ -83,6 +84,10 @@
                 }
                 this.storedBooks.unshift(book);
                 this.selectedBtn = 'stored-resources';
+            },
+            removeBook(id){
+                const bookIndex = this.storedBooks.findIndex(book => book.id === id);
+                this.storedBooks.splice(bookIndex, 1);
             }
         }
     }
